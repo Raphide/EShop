@@ -1,0 +1,24 @@
+.imgOverlay {
+  position: relative;
+
+  .prodImg {
+    width: 200px;
+  }
+
+  .fave {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 30px;
+    width: 30px;
+    border: 4px solid white;
+    border-radius: 25%;
+    background-color: rgb(255, 255, 255);
+    &_true{
+      background-color: aquamarine;
+    }
+    &_false{
+      background-color: white;
+    }
+  }
+}

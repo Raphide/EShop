@@ -1,0 +1,76 @@
+@use "../../_partials/variables" as v;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.image{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    flex-shrink: 0;
+    flex-grow: 0;
+    transition: translate 300ms ease-in-out;
+}
+
+.button{
+   all: unset;
+   display: block;
+   position: absolute;
+   top:0;
+   bottom: 0;
+   padding: 1rem; 
+   cursor: pointer;
+   transition: background-color 100ms ease-in-out;
+   
+   &:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+   }
+}
+
+.button:hover > * {
+    animation: squish 200ms ease-in-out;
+}
+
+@keyframes squish {
+    50% {
+        scale: 1.4 0.6;
+    }
+    
+   }
+
+   .catHead{
+    height:70px;
+
+   }
+
+   .dotButtons{
+    all: unset;
+    display: block;
+    padding: .25rem;
+    min-width: 1rem;
+    max-width: fit-content;
+    height: 1rem;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    color: v.$beige;
+    cursor: pointer;
+    transition: background-color 100ms ease-in-out;
+    transition: scale 100ms ease-in-out;
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.5);
+        
+        scale:1.1;
+       }
+
+   }
+
+   .button:focus-visible,
+   .dotButtons:focus-visible{
+    outline: auto;
+   }
