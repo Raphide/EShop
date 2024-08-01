@@ -15,10 +15,34 @@
     border-radius: 25%;
     background-color: rgb(255, 255, 255);
     &_true{
-      background-color: aquamarine;
+      background-color: rgb(255, 198, 40);
     }
     &_false{
       background-color: white;
     }
+  }
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  span{
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  h1{
+    text-transform: uppercase;
+    margin: 0;
+  }
+  p{
+    margin: 0;
+  }
+  .price{
+    font-size: 2em;
   }
 }

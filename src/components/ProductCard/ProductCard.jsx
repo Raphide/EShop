@@ -12,9 +12,8 @@ const ProductCard = ({ product }) => {
 
   useEffect(() => {
     setFavorite(product.id, isFavorite);
-    console.log(isFavorite);
+    // console.log(isFavorite);
   }, [isFavorite]);
-  
 
   const classes = `${styles.fave} ${
     product.favorited ? styles.fave_true : styles.fave_false
@@ -26,9 +25,13 @@ const ProductCard = ({ product }) => {
         <img className={styles.prodImg} src={product.imgLink} />
         <div className={classes} onClick={handleClick}></div>
       </section>
-      <h1>{product.name}</h1>
-      <h3>{product.flavour}</h3>
-      <Link to={product.id}>See more</Link>
+      <section className={styles.content}>
+        <Link to={product.id}><h1>{product.name}</h1></Link>
+        <p>{product.flavour}</p>
+        <span><h1>$</h1>
+        <h1 className={styles.price}>{product.size.small.price}</h1></span>
+      </section>
+      
     </div>
   );
 };

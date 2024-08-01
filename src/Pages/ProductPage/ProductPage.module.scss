@@ -1,3 +1,45 @@
-.img{
-    height: 500px;
+@use "../../_partials/variables" as v;
+
+.main {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.img {
+  height: 500px;
+}
+
+.content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  h1 {
+    margin: 0em;
+    text-transform: uppercase;
+  }
+  span {
+    display: flex;
+    flex-direction: row;
+   
+    .price {
+      font-size: 2.5em;
+    }
+  }
+  p {
+    margin: 0;
+  }
+}
+
+button {
+  all: unset;
+  background-color: v.$darkGray;
+  height: 1.5em;
+  width: 10em;
+  color: v.$beige;
+  margin: 0.5em;
+  border-radius: 10px;
 }
