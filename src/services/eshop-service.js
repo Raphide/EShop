@@ -38,10 +38,27 @@ export const getCart = async () => {
   return cleanedData;
 }
 
-export const getAllInCart = async () => {
+// export const getAllInCart = async () => {
+//   const docRef = collection(db, "products");
+//   try{
+//   const q = query(docRef, where("inCart", "==", true));
+//   const querySnapshot = await getDocs(q);
+//   const cleanedData = querySnapshot.docs.map((doc) => ({
+//     id: doc.id,
+//     ...doc.data(),
+//   }));
+//   return cleanedData;
+// }catch (e) {
+//   console.warn(e);
+//   throw(e);
+// }
+
+// }
+
+export const getAllFavorites = async () => {
   const docRef = collection(db, "products");
   try{
-  const q = query(docRef, where("inCart", "==", true));
+  const q = query(docRef, where("favorited", "==", true));
   const querySnapshot = await getDocs(q);
   const cleanedData = querySnapshot.docs.map((doc) => ({
     id: doc.id,
@@ -55,10 +72,10 @@ export const getAllInCart = async () => {
 
 }
 
-export const getAllFavorites = async () => {
+export const getFeaturedProducts = async () => {
   const docRef = collection(db, "products");
   try{
-  const q = query(docRef, where("favorited", "==", true));
+  const q = query(docRef, where("featured", "==", true));
   const querySnapshot = await getDocs(q);
   const cleanedData = querySnapshot.docs.map((doc) => ({
     id: doc.id,

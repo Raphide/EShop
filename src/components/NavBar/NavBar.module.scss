@@ -50,11 +50,16 @@
 
 .cat {
   position: absolute;
-
+background-image: url("../../assets/Cat.svg");
+background-repeat: no-repeat;
   height: 200px;
+  width: 150px;
   margin: 0px;
   left: 10px;
   top: 10vh;
   z-index: 1;
   transform: rotate(180deg);
+  &:hover{
+    background-image: url("../../assets/cheekyCat.svg");
+  }
 }

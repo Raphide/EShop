@@ -35,12 +35,12 @@ const ProductPage = ({ product }) => {
 
   useEffect(() => {
     setFavorite(product.id, isFavorite);
-    console.log(isFavorite);
+    // console.log(isFavorite);
   }, [isFavorite]);
 
   useEffect(() => {
     setInCartStatus(product.id, inCart);
-    console.log(inCart);
+    // console.log(inCart);
   }, [inCart]);
 
   const classes = `${styles.fave} ${
@@ -65,8 +65,6 @@ const ProductPage = ({ product }) => {
           <h1 style={{ fontSize: "1.5em" }}>$</h1>
           <h1 className={styles.price}>{sizeData.price}</h1>
         </span>
-
-        {/* {isFavorite ? <h5>Love this</h5> : <h5>Hate this</h5>} */}
         <h6>Buy now</h6>
         <form>
           <label>Select size</label>

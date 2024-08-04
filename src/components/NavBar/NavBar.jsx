@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./NavBar.module.scss";
 import Header from "../Header/Header";
-import Cat from '../../assets/Cat.svg';
+
 
 const NavBar = () => {
   return (
@@ -30,8 +30,7 @@ const NavBar = () => {
         </NavLink>
       </section>
     </nav>
-    
-    <img src={Cat} className={styles.cat}/>
+    <div className={styles.cat}></div>
     </>
   );
 };
