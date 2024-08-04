@@ -1,8 +1,31 @@
+@use "../../_partials/queries.scss" as q;
+@use "../../_partials/variables" as v;
+
+.heading{
+  width: 100%;
+  border-bottom: 2px solid v.$darkGray;
+  margin-top: 0;
+  padding-bottom: 1em;
+}
+
 .main {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-rows: 2fr 2fr ;
+  gap: 1.5em 1.5em;
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 0.5em 1.5em;
+  
+  @include q.phone {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 2fr 2fr 2fr 2fr 2fr;
+    gap: 0;
+  }
+  @include q.laptop {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 2fr 2fr 2fr;
+  }
+
 }

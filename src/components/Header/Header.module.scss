@@ -1,6 +1,10 @@
 @use "../../_partials/variables" as v;
 
 .header{
+    height: 100%;
+    padding: 0em 0.5em 0em 0.5em;
     color: v.$beige;
     font-size: 4em;
+    background-color: v.$darkGray;
+    margin: 0;
 }

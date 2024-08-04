@@ -1,0 +1,23 @@
+@use "../../_partials/variables" as v;
+
+.fave {
+    z-index: 2;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 30px;
+    width: 30px;
+    clip-path: polygon(50% 0,79% 90%,2% 35%,98% 35%,21% 90%);
+    // border: 4px solid white;
+    border-radius: 25%;
+    &:hover{
+      cursor: pointer;
+    }
+    background-color: v.$darkGray;
+    &_true{
+      background-color: rgb(255, 204, 0);
+    }
+    &_false{
+      background-color: v.$darkGray;
+    }
+  }

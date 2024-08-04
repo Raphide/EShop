@@ -8,14 +8,15 @@ import {
   subscribeToCart,
 } from "../../services/eshop-service";
 
+
 const ProductPage = ({ product }) => {
   const [isFavorite, setIsFavorite] = useState(product.favorited);
   const [inCart, setInCart] = useState(product.inCart);
   const [productSize, setProductSize] = useState("small");
-  const { size, ...rest } = product;
-  const largeData = size.large;
-  const smallData = size.small;
-  const sizeData = productSize === "small" ? smallData : largeData;
+  const { small, large, ...rest } = product;
+  // const largeData = size.large;
+  // const smallData = size.small;
+  const sizeData = productSize === "small" ? small : large;
   
 
   const addToFavorites = () => {
@@ -52,12 +53,18 @@ const ProductPage = ({ product }) => {
     setProductSize(value);
   };
 
+  // remember to change product to sizeData
   return (
     <div className={styles.main}>
-      <img className={styles.img} src={product.imgLink} />
+      
+      <img className={styles.img} src={sizeData.img} /> 
       <div className={styles.content}>
       <h1>{product.name}</h1>
       <p>{product.flavour} flavour</p>
+      <h5>Size: {productSize}</h5>
+      <span><h1 style={{fontSize: "1.5em"}}>$</h1>
+      <h1 className={styles.price}>{sizeData.price}</h1></span>
+  
       {/* {isFavorite ? <h5>Love this</h5> : <h5>Hate this</h5>} */}
       <h6>Buy now</h6>
       <form>
@@ -68,12 +75,12 @@ const ProductPage = ({ product }) => {
         </select>
       </form>
 
-        <h5>Size: {productSize}</h5>
-        <span><h1 style={{fontSize: "1.5em"}}>$</h1>
-        <h1 className={styles.price}>{sizeData.price}</h1></span>
+        
+        
+        
         <h5>{sizeData.qty} still in stock!</h5>
 
-      <button onClick={addToFavorites}>Favorite</button>
+      <button onClick={addToFavorites}>{isFavorite ? "Remove Favorite" : "Favorite"}</button>
       {/* {inCart ? (
         <button onClick={removeFromCart}>remove from cart</button>
       ) : (

@@ -1,0 +1,17 @@
+@use "../../_partials/variables" as v;
+
+.heading{
+    width: 100%;
+    border-bottom: 2px solid v.$darkGray;
+    margin-top: 0;
+    padding-bottom: 1em;
+  }
+  
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5em 1.5em;
+  }

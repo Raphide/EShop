@@ -13,25 +13,39 @@
 
 .app{
   width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: row;
 }
 
 .shop{
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   color: #343436 ;
-
+  background-color: #ede4d2;
 }
 .side{
 height: 100vh;
 width: 10%;
-background-color: #343436;
+background-color: #ede4d2;
 }
 
 h1{
   font-weight: 800;
 }
+
+button:hover{
+  cursor: pointer;
+}
+
+a{
+  color: #343436;
+}
+
+a:visited{
+  color: #343436;
+}
+

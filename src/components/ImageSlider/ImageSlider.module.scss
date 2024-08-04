@@ -55,9 +55,9 @@
     min-width: 1rem;
     max-width: fit-content;
     height: 1rem;
-    border-radius: 10px;
+   
     background-color: rgba(0, 0, 0, 0.2);
-    border: 3px solid rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.9);
     color: v.$beige;
     cursor: pointer;
     transition: background-color 100ms ease-in-out;

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { getAllFavorites } from '../../services/eshop-service';
-import ProductCard from '../../components/ProductCard/ProductCard';
+import ProductCard from '../../containers/ProductCard/ProductCard';
+import Heading from '../../components/Heading/Heading';
+import styles from "./FavoritesPage.module.scss"
+import FavoriteCard from '../../containers/FavoriteCard/FavoriteCard';
 
 const FavoritesPage = () => {
 
@@ -10,14 +13,17 @@ const FavoritesPage = () => {
         .then((data) => {
             setProducts(data);
         })
-    },[]);
+    },[products]);
     
   return (
     <div>
+      
+      <Heading text="FAVORITES"/>
+      <section className={styles.main}>
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <FavoriteCard key={product.id} product={product} />
         ))}
-     
+     </section>
     </div>
   )
 }

@@ -12,7 +12,6 @@ import ProductLoader from './containers/ProductLoader/ProductLoader';
 import FavoritesPage from './Pages/FavoritesPage/FavoritesPage';
 
 
-
 function App() {
   
 
@@ -20,10 +19,11 @@ function App() {
     <>
     {/* <button onClick={getProductCollection}>Click</button> */}
       <div className="app">
-        <div className="side"></div>
+   
         <div className="shop">
         <BrowserRouter>
         <NavBar/> 
+
         <Routes>
           <Route path="/" element={<LandingPage/>}></Route>
           <Route path="/shop" element={<ShopPage/>}></Route>
@@ -33,7 +33,7 @@ function App() {
        </Routes>
         </BrowserRouter>
       </div>
-      <div className="side"></div>
+
       </div>
     </>
   )

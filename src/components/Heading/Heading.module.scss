@@ -1,0 +1,8 @@
+@use "../../_partials/variables" as v;
+
+.heading{
+    width: 100%;
+    border-bottom: 2px solid v.$darkGray;
+    margin-top: 0;
+    padding-bottom: 1em;
+  }
