@@ -1,20 +1,19 @@
-import { useEffect } from "react"
-import can1 from "../../assets/OriginalPromo.png"
-import can2 from "../../assets/ChocolatePromo.png"
-import can3 from "../../assets/StrawberryPromo.png"
-import Can4 from "../../assets/PineapplePromo.png"
+import { useEffect, useState } from "react"
 import ImageSlider from "../../components/ImageSlider/ImageSlider"
-import { getProductCollection } from "../../services/eshop-service"
+import { getFeaturedProducts } from "../../services/eshop-service"
 import styles from "./Carousel.module.scss"
 
 const Carousel = () => {
-//   useEffect(()=> (
-// getProductCollection()
-//   ),[])
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+      getFeaturedProducts()
+      .then((data) => {
+          setProducts(data);
+      })
+  },[products]);
 
-    const images = [can1, can2, can3, Can4]
   return (
-    <div className={styles.carousel} ><ImageSlider imageUrls={images}/></div>
+    <div className={styles.carousel} ><ImageSlider product={products}/></div>
   )
 }
 

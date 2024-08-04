@@ -1,8 +1,14 @@
 @use "../../_partials/variables" as v;
 @use "../../_partials/queries.scss" as q;
 
-*{
+* {
+  position: sticky;
+  @include q.phone {
     position: sticky;
+  }
+  @include q.laptop {
+    position: sticky;
+  }
 }
 .bar {
   width: 100%;
@@ -16,6 +22,13 @@
   z-index: 2;
   position: sticky;
   top: 0;
+  @include q.phone {
+    position: fixed;
+    height: 110px;
+  }
+  @include q.laptop {
+    
+  }
   .section {
     width: 33.33%;
     display: flex;
@@ -23,10 +36,21 @@
     justify-content: space-evenly;
     align-items: center;
     margin: 0;
+    @include q.phone {
+      border-right: 1px solid v.$darkGray;
+      width: 50%;
+    }
+    @include q.laptop {
+    }
     &_mid {
       width: 100%;
       border-left: 1px solid v.$darkGray;
       border-right: 1px solid v.$darkGray;
+      @include q.phone {
+        display: none;
+      }
+      @include q.laptop {
+      }
     }
   }
 
@@ -47,11 +71,10 @@
   }
 }
 
-
 .cat {
   position: absolute;
-background-image: url("../../assets/Cat.svg");
-background-repeat: no-repeat;
+  background-image: url("../../assets/Cat.svg");
+  background-repeat: no-repeat;
   height: 200px;
   width: 150px;
   margin: 0px;
@@ -59,7 +82,17 @@ background-repeat: no-repeat;
   top: 10vh;
   z-index: 1;
   transform: rotate(180deg);
-  &:hover{
+  &:hover {
     background-image: url("../../assets/cheekyCat.svg");
   }
+  @include q.phone {
+    display: none;
+  }
+  @include q.laptop {
+  }
+}
+
+@include q.phone {
+}
+@include q.laptop {
 }

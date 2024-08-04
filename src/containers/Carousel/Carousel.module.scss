@@ -5,4 +5,9 @@
     width: 100%;
     height: 400px;
     aspect-ratio: 10 / 4;
+    @include q.phone {
+        max-width: 400px;
+    }
+    @include q.laptop {
+    }
 }

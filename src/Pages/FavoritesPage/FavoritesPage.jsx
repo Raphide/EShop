@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { getAllFavorites } from '../../services/eshop-service';
-import ProductCard from '../../containers/ProductCard/ProductCard';
 import Heading from '../../components/Heading/Heading';
 import styles from "./FavoritesPage.module.scss"
 import FavoriteCard from '../../containers/FavoriteCard/FavoriteCard';

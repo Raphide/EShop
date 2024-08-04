@@ -1,12 +1,6 @@
 @use "../../_partials/variables" as v;
 @use "../../_partials/queries.scss" as q;
 
-.heading{
-    width: 100%;
-    border-bottom: 2px solid v.$darkGray;
-    margin-top: 0;
-    padding-bottom: 1em;
-  }
   
   .main {
     display: flex;

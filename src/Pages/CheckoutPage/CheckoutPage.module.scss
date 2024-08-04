@@ -8,4 +8,9 @@
 .total{
     width:700px;
     border-top: 1px solid v.$darkGray;
+    @include q.phone {
+        width: 400px
+    }
+    @include q.laptop {
+    }
 }

@@ -38,23 +38,6 @@ export const getCart = async () => {
   return cleanedData;
 }
 
-// export const getAllInCart = async () => {
-//   const docRef = collection(db, "products");
-//   try{
-//   const q = query(docRef, where("inCart", "==", true));
-//   const querySnapshot = await getDocs(q);
-//   const cleanedData = querySnapshot.docs.map((doc) => ({
-//     id: doc.id,
-//     ...doc.data(),
-//   }));
-//   return cleanedData;
-// }catch (e) {
-//   console.warn(e);
-//   throw(e);
-// }
-
-// }
-
 export const getAllFavorites = async () => {
   const docRef = collection(db, "products");
   try{
@@ -69,7 +52,6 @@ export const getAllFavorites = async () => {
   console.warn(e);
   throw(e);
 }
-
 }
 
 export const getFeaturedProducts = async () => {
@@ -86,7 +68,6 @@ export const getFeaturedProducts = async () => {
   console.warn(e);
   throw(e);
 }
-
 }
 
 export const getProductById = async (id) => {
@@ -130,16 +111,6 @@ export const addProductToCart = async (productData) => {
   }
 };
 
-// export const addProductToCart = async (price) => {
-//   const docRef = doc(db, "cart", "cLhN2XvMa9EOuVcE5sVP");
-//   await setDoc(docRef, { totalPrice: price }, {merge: true});
-// };
-
-// export const deleteProduct = async (id) => {
-//   const docRef = doc(db, "products", id);
-//   await deleteDoc(docRef);
-// };
-
 export const deleteProductFromCart = async (id) => {
   const docRef = doc(db, "cart", id);
   await deleteDoc(docRef);
@@ -155,11 +126,11 @@ export const setInCartStatus = async (id, bool) => {
   await setDoc(docRef, { inCart: bool }, { merge: true });
 };
 
-export const editProductById = async (id, data) => {
-  const docRef = doc(db, "products", id);
-  const cleanProductData = cleanProductData(data);
-  await updateDoc(docRef, cleanProductData);
-};
+// export const editProductById = async (id, data) => {
+//   const docRef = doc(db, "products", id);
+//   const cleanProductData = cleanProductData(data);
+//   await updateDoc(docRef, cleanProductData);
+// };
 
 export const subscribeToProducts = (callback) => {
   const collectionRef = collection(db, "products");

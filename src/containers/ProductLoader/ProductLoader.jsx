@@ -36,4 +36,3 @@ const ProductLoader = () => {
 
 export default ProductLoader;
 
-// productData.map((product) => (<ProductCard key={product.id} product={product}/>))

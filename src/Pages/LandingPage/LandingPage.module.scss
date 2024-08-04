@@ -10,6 +10,12 @@
 .blurb{
     max-width: 800px;
     margin: 1em;
+    @include q.phone {
+        width: 400px;
+    }
+    @include q.laptop {
+    }
+
     p{
         text-wrap: balance;
     }

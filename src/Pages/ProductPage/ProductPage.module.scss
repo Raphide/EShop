@@ -6,12 +6,35 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  @include q.phone {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  @include q.laptop {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  
+  }
 }
 
 .img {
   height: 500px;
   width: 50%;
   object-fit: cover;
+  @include q.phone {
+    width: 100%;
+  }
+  @include q.laptop {
+    height: 500px;
+    width: 50%;
+    object-fit: cover;
+  
+  }
+  
 }
 
 .content {
@@ -21,6 +44,16 @@
   justify-content: flex-start;
   align-items: flex-start;
   margin-left: 20px;
+  @include q.phone {
+    width: 100%
+    
+
+  }
+  @include q.laptop {
+    width: 50%;
+   
+  
+  }
   h1 {
     margin: 0em;
     text-transform: uppercase;
@@ -28,9 +61,11 @@
   span {
     display: flex;
     flex-direction: row;
+    height: 3em;
    
     .price {
       font-size: 2.5em;
+      margin-bottom: 0.5em;
     }
   }
   p {
@@ -38,7 +73,7 @@
   }
 }
 
-button {
+.buttons {
   all: unset;
   background-color: v.$darkGray;
   height: 1.5em;
@@ -46,4 +81,42 @@ button {
   color: v.$beige;
   margin: 0.5em;
   border-radius: 10px;
+  @include q.phone {
+    height: 3em;
+
+  }
+  @include q.laptop {
+    height: 1.5em;
+   
+  
+  }
 }
+
+.buttonSpan{
+  @include q.phone {
+    display: flex;
+flex-direction: column;
+  }
+  @include q.laptop {
+   
+  
+  }
+}
+
+.fave {
+    height: 60px;
+    width: 60px;
+    clip-path: polygon(50% 0,79% 90%,2% 35%,98% 35%,21% 90%);
+    border-radius: 25%;
+   
+    background-color: v.$darkGray;
+    &_true{
+      background-color: rgb(255, 204, 0);
+    }
+    &_false{
+      background-color: v.$darkGray;
+    }
+    &:hover{
+        cursor: pointer;
+      }
+  }
