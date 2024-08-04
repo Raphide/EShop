@@ -105,8 +105,7 @@ export const addProductToCart = async (productData) => {
   try {
     const collectionRef = collection(db, "cart");
     const docRef = await addDoc(collectionRef, {
-      name: productData.name,
-    imgLink: productData.imgLink});
+      productData});
     return docRef.id;
   } catch (e) {
     console.warn(e);

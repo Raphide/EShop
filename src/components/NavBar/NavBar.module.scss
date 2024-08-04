@@ -1,4 +1,6 @@
 @use "../../_partials/variables" as v;
+@use "../../_partials/queries.scss" as q;
+
 *{
     position: sticky;
 }

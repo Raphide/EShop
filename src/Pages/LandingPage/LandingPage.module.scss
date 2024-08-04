@@ -1,0 +1,17 @@
+@use "../../_partials/queries.scss" as q;
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blurb{
+    max-width: 800px;
+    margin: 1em;
+    p{
+        text-wrap: balance;
+    }
+    
+}

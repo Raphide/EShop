@@ -4,7 +4,7 @@ import styles from "./ProductImg.module.scss"
 
 const ProductImg = ({product}) => {
   return (
-    <><Link to={`/shop/${product.id}`}> <img className={styles.prodImg} src={product.imgLink} /></Link></>
+    <><Link to={`/shop/${product.id}`} className={styles.Link}> <img className={styles.prodImg} src={product.imgLink} /></Link></>
   )
 }
 

@@ -1,0 +1,11 @@
+@use "../../_partials/variables" as v;
+@use "../../_partials/queries.scss" as q;
+
+*{
+    white-space: pre;
+}
+
+.total{
+    width:700px;
+    border-top: 1px solid v.$darkGray;
+}

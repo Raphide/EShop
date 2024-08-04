@@ -8,16 +8,14 @@ import {
   subscribeToCart,
 } from "../../services/eshop-service";
 
-
 const ProductPage = ({ product }) => {
   const [isFavorite, setIsFavorite] = useState(product.favorited);
-  const [inCart, setInCart] = useState(product.inCart);
   const [productSize, setProductSize] = useState("small");
-  const { small, large, ...rest } = product;
-  // const largeData = size.large;
-  // const smallData = size.small;
+  const { small, large, name, ...rest } = product;
   const sizeData = productSize === "small" ? small : large;
-  
+  const {price, img} = sizeData;
+  const [inCart, setInCart] = useState(sizeData.inCart);
+  const cartData = {name, price, img};
 
   const addToFavorites = () => {
     setIsFavorite(!isFavorite);
@@ -25,13 +23,15 @@ const ProductPage = ({ product }) => {
 
   const addToCart = () => {
     setInCart(true);
-    addProductToCart(product);
+    addProductToCart(
+      cartData
+    );
   };
 
-  // const removeFromCart = () => {
-  //   setInCart(false);
-  //   deleteProductFromCart(product.id);
-  // };
+  const removeFromCart = () => {
+    setInCart(false);
+    deleteProductFromCart(product.id);
+  };
 
   useEffect(() => {
     setFavorite(product.id, isFavorite);
@@ -56,37 +56,37 @@ const ProductPage = ({ product }) => {
   // remember to change product to sizeData
   return (
     <div className={styles.main}>
-      
-      <img className={styles.img} src={sizeData.img} /> 
+      <img className={styles.img} src={sizeData.img} />
       <div className={styles.content}>
-      <h1>{product.name}</h1>
-      <p>{product.flavour} flavour</p>
-      <h5>Size: {productSize}</h5>
-      <span><h1 style={{fontSize: "1.5em"}}>$</h1>
-      <h1 className={styles.price}>{sizeData.price}</h1></span>
-  
-      {/* {isFavorite ? <h5>Love this</h5> : <h5>Hate this</h5>} */}
-      <h6>Buy now</h6>
-      <form>
-        <label>Select size</label>
-        <select onChange={handleChange}>
-          <option value={"small"}>Small</option>
-          <option value={"large"}>Large</option>
-        </select>
-      </form>
+        <h1>{product.name}</h1>
+        <p>{product.flavour} flavour</p>
+        <h5>Size: {productSize}</h5>
+        <span>
+          <h1 style={{ fontSize: "1.5em" }}>$</h1>
+          <h1 className={styles.price}>{sizeData.price}</h1>
+        </span>
 
-        
-        
-        
+        {/* {isFavorite ? <h5>Love this</h5> : <h5>Hate this</h5>} */}
+        <h6>Buy now</h6>
+        <form>
+          <label>Select size</label>
+          <select onChange={handleChange}>
+            <option value={"small"}>Small</option>
+            <option value={"large"}>Large</option>
+          </select>
+        </form>
+
         <h5>{sizeData.qty} still in stock!</h5>
 
-      <button onClick={addToFavorites}>{isFavorite ? "Remove Favorite" : "Favorite"}</button>
-      {/* {inCart ? (
+        <button onClick={addToFavorites}>
+          {isFavorite ? "Remove Favorite" : "Favorite"}
+        </button>
+        {/* {inCart ? (
         <button onClick={removeFromCart}>remove from cart</button>
       ) : (
         <button onClick={addToCart}>Add to cart</button>
       )} */}
-      <button onClick={addToCart}>Add to cart</button>
+        <button onClick={addToCart}>Add to cart</button>
       </div>
     </div>
   );

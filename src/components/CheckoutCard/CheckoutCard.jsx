@@ -8,10 +8,11 @@ const CheckoutCard = ({product}) => {
         deleteProductFromCart(product.id);
       };
   return (
-    <div> <img className={styles.prodImg} src={product.imgLink} />
-    <h1>{product.name}</h1>
-    <h3>{product.smallData}</h3>
-    <button onClick={removeFromCart()}>Remove</button>
+    <div className={styles.content}> <img className={styles.prodImg} src={product.productData.img} />
+    <section className={styles.info}>
+    <h1>{product.productData.name}</h1>
+    <h3>${product.productData.price}</h3>
+    <button onClick={removeFromCart}>Remove</button></section>
     </div>
   )
 }

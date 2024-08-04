@@ -19,11 +19,9 @@ function App() {
     <>
     {/* <button onClick={getProductCollection}>Click</button> */}
       <div className="app">
-   
         <div className="shop">
         <BrowserRouter>
         <NavBar/> 
-
         <Routes>
           <Route path="/" element={<LandingPage/>}></Route>
           <Route path="/shop" element={<ShopPage/>}></Route>
@@ -33,7 +31,6 @@ function App() {
        </Routes>
         </BrowserRouter>
       </div>
-
       </div>
     </>
   )
