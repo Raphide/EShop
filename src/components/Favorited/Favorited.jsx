@@ -12,8 +12,8 @@ const Favorited = ({product}) => {
 
   useEffect(() => {
     setFavorite(product.id, isFavorite);
-    // console.log(isFavorite);
-  }, []);
+    console.log(isFavorite);
+  }, [isFavorite]);
 
   const classes = `${styles.fave} ${
     product.favorited ? styles.fave_true : styles.fave_false

@@ -10,7 +10,7 @@ const Carousel = () => {
       .then((data) => {
           setProducts(data);
       })
-  },[products]);
+  },[]);
 
   return (
     <div className={styles.carousel} ><ImageSlider product={products}/></div>

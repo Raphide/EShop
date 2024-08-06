@@ -12,6 +12,9 @@ const FavoritesPage = () => {
         .then((data) => {
             setProducts(data);
         })
+        
+        //not handling favorites in real time
+        //to-do: switch to favorites subscription 
     },[]);
     
   return (

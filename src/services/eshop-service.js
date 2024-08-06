@@ -155,3 +155,5 @@ export const subscribeToCart = (callback) => {
   });
   return unsub;
 };
+
+//to-do: create favorite subscription
