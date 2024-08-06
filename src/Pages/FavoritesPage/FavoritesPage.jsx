@@ -12,7 +12,7 @@ const FavoritesPage = () => {
         .then((data) => {
             setProducts(data);
         })
-    },[products]);
+    },[]);
     
   return (
     <div>

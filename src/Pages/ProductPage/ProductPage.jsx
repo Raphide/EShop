@@ -22,7 +22,7 @@ const ProductPage = ({ product }) => {
   useEffect(() => {
     setFavorite(product.id, isFavorite);
     // console.log(isFavorite);
-  }, [isFavorite]);
+  }, []);
 
   const addToCart = () => {
     // setInCart(true);
@@ -34,7 +34,7 @@ const ProductPage = ({ product }) => {
   useEffect(() => {
     setFavorite(product.id, isFavorite);
     // console.log(isFavorite);
-  }, [isFavorite]);
+  }, []);
 
   // useEffect(() => {
   //   setInCartStatus(product.id, inCart);
