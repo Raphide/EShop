@@ -1,8 +1,6 @@
-# React + Vite
+# E-SHOP PROJECT
+The aim of this project was to demonstrate my competency with Firestore and React by building a mock e-commerce platform that fetched all of it's product data from a Firebase database.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The application has an image carousel, a feature to save favourites and a very basic checkout page.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<a href="https://e-shop-two-theta.vercel.app/">Live Link</a>
